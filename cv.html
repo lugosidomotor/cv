@@ -438,7 +438,7 @@
             color: var(--cyan);
         }
 
-        /* ATS Keywords - hidden on screen */
+        /* ATS Keywords - hidden on screen, visible in PDF for ATS bots */
         .ats-keywords {
             position: absolute;
             left: -9999px;
@@ -561,15 +561,20 @@
                 page-break-after: avoid;
             }
 
-            /* ATS keywords - in PDF but invisible */
+            /* ATS keywords - in PDF but invisible (white text on white background) */
             .ats-keywords {
-                font-size: 0.1pt !important;
-                line-height: 0 !important;
-                color: white !important;
-                height: 0 !important;
-                overflow: hidden !important;
+                position: static !important;
+                left: auto !important;
+                display: block !important;
+                font-size: 1pt !important;
+                line-height: 1.2 !important;
+                color: #ffffff !important;
+                background: #ffffff !important;
                 margin: 0 !important;
                 padding: 0 !important;
+                border: none !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
         }
 
