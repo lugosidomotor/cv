@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dömötör Lugosi - DevOps/SRE/Data Platform Engineer CV. 6+ years experience with Kubernetes, Docker, Terraform, AWS, Azure, Databricks, CI/CD.">
+    <meta name="keywords" content="DevOps, SRE, Data Platform Engineer, Kubernetes, Docker, Terraform, AWS, Azure, Python, CI/CD, Databricks, ArgoCD">
+    <meta name="author" content="Dömötör Lugosi">
+    <meta name="robots" content="index, follow">
+    <title>Dömötör Lugosi - DevOps/SRE/Data Platform Engineer - CV</title>
+    
+    <!-- Structured Data for ATS/Bots -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dömötör Lugosi",
+      "givenName": "Dömötör",
+      "familyName": "Lugosi",
+      "jobTitle": "DevOps / SRE / Data Platform Engineer",
+      "description": "Senior DevOps Engineer with 6+ years experience in Kubernetes, Terraform, AWS, Azure, CI/CD automation, and Big Data platforms for Fortune 500 companies",
+      "email": "lugosi.domotor@gmail.com",
+      "telephone": "+36702433530",
+      "url": "https://www.lugosidomotor.hu",
+      "sameAs": [
+        "https://linkedin.com/in/domotorlugosi",
+        "https://medium.com/@domotorlugosi"
+      ],
+      "knowsAbout": [
+        "DevOps", "Site Reliability Engineering", "SRE", "Data Platform Engineering",
+        "Kubernetes", "K8s", "Docker", "Containerization", "Terraform", "Ansible",
+        "Python", "AWS", "Amazon Web Services", "Azure", "Microsoft Azure", "GCP",
+        "CI/CD", "Continuous Integration", "Continuous Deployment", "GitOps",
+        "Databricks", "ArgoCD", "Helm", "Infrastructure as Code", "IaC",
+        "GitHub Actions", "Jenkins", "GitLab CI", "Prometheus", "Grafana",
+        "Kafka", "Spark", "Big Data", "Data Engineering", "MLOps",
+        "ELK Stack", "Elasticsearch", "Dynatrace", "Monitoring", "Observability",
+        "HIPAA Compliance", "SOC 2", "Cloud Security", "Microservices"
+      ],
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Lead DevOps Engineer",
+          "occupationLocation": {"@type": "Country", "name": "Hungary"},
+          "estimatedSalary": {"@type": "MonetaryAmountDistribution", "currency": "EUR"}
+        },
+        {
+          "@type": "Occupation", 
+          "name": "Site Reliability Engineer"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Data Platform Engineer"
+        }
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "EPAM Systems DevOps Academy"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Budapest Business School"
+        }
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent Contractor"
+      },
+      "seeks": {
+        "@type": "Demand",
+        "name": "DevOps Engineering Opportunities"
+      }
+    }
+    </script>
+    
+    <!-- Additional hidden meta for ATS -->
+    <meta name="classification" content="DevOps Engineer, SRE, Platform Engineer, Cloud Engineer">
+    <meta name="category" content="Information Technology, Software Engineering, Cloud Computing">
+    <meta name="coverage" content="Remote, Hungary, Europe, Worldwide">
+    <meta name="subject" content="DevOps, Kubernetes, AWS, Azure, Terraform, CI/CD, Big Data, Data Platform">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cyan: #00fff5;
+            --pink: #ff006e;
+            --purple: #8338ec;
+            --dark: #0a0e27;
+            --card: #151932;
+            --text: #ffffff;
+            --text-muted: #94a3b8;
+            --border: rgba(0, 255, 245, 0.2);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--dark);
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--card);
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        /* Action Buttons */
+        .action-bar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .action-btn {
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .print-btn {
+            background: var(--cyan);
+            color: var(--dark);
+            box-shadow: 0 4px 20px rgba(0, 255, 245, 0.3);
+        }
+
+        .print-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 245, 0.4);
+        }
+
+        .back-btn {
+            background: var(--purple);
+            color: white;
+            box-shadow: 0 4px 20px rgba(131, 56, 236, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(131, 56, 236, 0.4);
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h1 {
+            font-size: 36pt;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+            line-height: 1.2;
+        }
+
+        .job-title {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 10pt;
+            color: var(--text-muted);
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--cyan);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 35px;
+            page-break-inside: avoid;
+        }
+
+        h2 {
+            font-size: 14pt;
+            font-weight: 800;
+            color: var(--cyan);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 255, 245, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 245, 0.1);
+            page-break-inside: avoid;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .exp-title {
+            font-size: 13pt;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .company {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--purple);
+        }
+
+        .date {
+            font-size: 10pt;
+            color: var(--pink);
+            font-weight: 600;
+            background: rgba(255, 0, 110, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .exp-desc {
+            font-size: 10pt;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .exp-section {
+            margin-top: 12px;
+        }
+
+        .exp-section-title {
+            font-size: 9pt;
+            font-weight: 800;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            font-size: 10pt;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-weight: bold;
+            font-size: 12pt;
+        }
+
+        .tech-stack {
+            font-size: 9pt;
+            color: var(--text-muted);
+            margin-top: 12px;
+            line-height: 1.6;
+            padding: 10px;
+            background: rgba(131, 56, 236, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid var(--purple);
+        }
+
+        .tech-stack strong {
+            color: var(--purple);
+        }
+
+        /* Profile */
+        .profile-text {
+            font-size: 11pt;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        /* Highlights */
+        .highlights-section {
+            background: rgba(0, 255, 245, 0.05);
+            margin: 0 -40px 35px;
+            padding: 25px 40px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .highlight-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .highlight-number {
+            font-size: 16pt;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .highlight-label {
+            font-size: 8pt;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Core Competencies */
+        .competencies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .competency {
+            background: rgba(0, 255, 245, 0.1);
+            color: var(--cyan);
+            padding: 5px 12px;
+            border: 1px solid rgba(0, 255, 245, 0.3);
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: 600;
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(131, 56, 236, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(131, 56, 236, 0.2);
+        }
+
+        .edu-title {
+            font-size: 12pt;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .edu-desc {
+            font-size: 10pt;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .edu-desc strong {
+            color: var(--purple);
+        }
+
+        /* Skills Compact */
+        .skills-compact p {
+            font-size: 10pt;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: var(--text-muted);
+            padding: 8px 12px;
+            background: rgba(0, 255, 245, 0.03);
+            border-radius: 8px;
+            border-left: 3px solid var(--cyan);
+        }
+
+        .skills-compact strong {
+            color: var(--cyan);
+        }
+
+        /* ATS Keywords - hidden on screen */
+        .ats-keywords {
+            position: absolute;
+            left: -9999px;
+            font-size: 1pt;
+            color: transparent;
+        }
+
+
+
+        /* Print Styles - Clean white version for PDF */
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+
+            :root {
+                --cyan: #0891b2;
+                --pink: #db2777;
+                --purple: #7c3aed;
+                --text: #1e293b;
+                --text-muted: #475569;
+            }
+
+            body {
+                padding: 0;
+                background: white;
+                color: var(--text);
+            }
+
+            .cv-container {
+                padding: 0;
+                max-width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+                background: white;
+                border: none;
+            }
+
+            h1 {
+                background: none;
+                -webkit-text-fill-color: var(--text);
+                color: var(--text);
+            }
+
+            h2 {
+                color: var(--cyan);
+                border-bottom-color: #e2e8f0;
+            }
+
+            .job-title {
+                color: var(--cyan);
+            }
+
+            .experience-item {
+                background: #f8fafc;
+                border-color: #e2e8f0;
+            }
+
+            .date {
+                background: rgba(219, 39, 119, 0.1);
+                color: var(--pink);
+            }
+
+            .company {
+                color: var(--purple);
+            }
+
+            .tech-stack {
+                background: rgba(124, 58, 237, 0.05);
+                border-left-color: var(--purple);
+            }
+
+            .highlight-number {
+                background: none;
+                -webkit-text-fill-color: var(--cyan);
+                color: var(--cyan);
+            }
+
+            .highlights-section {
+                margin: 0 0 35px;
+                padding: 20px 0;
+                background: #f8fafc;
+            }
+
+            .competency {
+                background: rgba(8, 145, 178, 0.1);
+                color: var(--cyan);
+                border-color: rgba(8, 145, 178, 0.3);
+            }
+
+            .edu-item {
+                background: rgba(124, 58, 237, 0.05);
+                border-color: rgba(124, 58, 237, 0.2);
+            }
+
+            .skills-compact p {
+                background: #f8fafc;
+                border-left-color: var(--cyan);
+            }
+
+            li::before {
+                color: var(--cyan);
+            }
+
+            .action-bar {
+                display: none;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            section, .experience-item, .edu-item {
+                page-break-inside: avoid;
+            }
+
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+
+            /* ATS keywords - in PDF but invisible */
+            .ats-keywords {
+                font-size: 0.1pt !important;
+                line-height: 0 !important;
+                color: white !important;
+                height: 0 !important;
+                overflow: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+
+        /* Mobile */
+        @media screen and (max-width: 768px) {
+            .exp-header {
+                flex-direction: column;
+            }
+
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .action-bar {
+                position: static;
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cv-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28pt;
+            }
+
+            .highlights-section {
+                margin: 0 -20px 35px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="action-bar">
+        <a href="index.html" class="action-btn back-btn">← Back to Website</a>
+        <button class="action-btn print-btn" onclick="window.print()">📄 Export PDF</button>
+    </div>
+
+    <div class="cv-container">
+        <header>
+            <h1>DÖMÖTÖR LUGOSI</h1>
+            <div class="job-title">DevOps / SRE / Data Platform Engineer</div>
+            <div class="contact-info">
+                <span>📞 +36 70 243 3530</span>
+                <span>✉️ <a href="mailto:lugosi.domotor@gmail.com">lugosi.domotor@gmail.com</a></span>
+                <span>💼 <a href="https://linkedin.com/in/domotorlugosi" target="_blank">linkedin.com/in/domotorlugosi</a></span>
+                <span>🌐 <a href="https://www.lugosidomotor.hu" target="_blank">lugosidomotor.hu</a></span>
+                <span>📝 <a href="https://medium.com/@domotorlugosi" target="_blank">medium.com/@domotorlugosi</a></span>
+            </div>
+        </header>
+
+        <section>
+            <h2>PROFESSIONAL SUMMARY</h2>
+            <p class="profile-text">
+                DevOps/SRE/Data Platform Engineer with 6+ years of experience building scalable infrastructure 
+                and Big Data platforms for Fortune 500 companies. Expert in Kubernetes, Terraform, CI/CD automation, 
+                and cloud-native architectures on AWS and Azure. Proven track record in HIPAA & SOC 2 compliance.
+            </p>
+        </section>
+
+        <section class="highlights-section">
+            <h2>KEY HIGHLIGHTS</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <span class="highlight-number">6+</span>
+                    <span class="highlight-label">Years Experience</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">Fortune 500</span>
+                    <span class="highlight-label">Clients</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">AWS & Azure</span>
+                    <span class="highlight-label">Cloud Platforms</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">HIPAA/SOC2</span>
+                    <span class="highlight-label">Compliance</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>CORE COMPETENCIES</h2>
+            <div class="competencies">
+                <span class="competency">Kubernetes</span>
+                <span class="competency">Docker</span>
+                <span class="competency">Terraform</span>
+                <span class="competency">AWS</span>
+                <span class="competency">Azure</span>
+                <span class="competency">CI/CD</span>
+                <span class="competency">GitHub Actions</span>
+                <span class="competency">ArgoCD</span>
+                <span class="competency">Helm</span>
+                <span class="competency">Python</span>
+                <span class="competency">Databricks</span>
+                <span class="competency">Kafka</span>
+                <span class="competency">Spark</span>
+                <span class="competency">Prometheus</span>
+                <span class="competency">Grafana</span>
+                <span class="competency">Infrastructure as Code</span>
+                <span class="competency">Site Reliability Engineering</span>
+                <span class="competency">Data Platform Engineering</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>PROFESSIONAL EXPERIENCE</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Lead DevOps / Data Platform Engineer</div>
+                        <div class="company">Contractor at Undisclosed Clients (NDA)</div>
+                    </div>
+                    <div class="date">Aug 2024 – Present</div>
+                </div>
+                <div class="exp-desc">Architecting Data-Driven Applications & Scalable Platforms.</div>
+                
+                <div class="exp-section">
+                    <div class="exp-section-title">Main Tasks:</div>
+                    <ul>
+                        <li>Designed & implemented AKS & Databricks based architecture</li>
+                        <li>Built CI/CD (GitHub Actions, Terraform, Helm, ArgoCD)</li>
+                        <li>Owned end-to-end HIPAA & SOC 2 compliance</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <strong>Main Technologies:</strong> Linux, Python, Shell, Docker, Kubernetes, Helm, ArgoCD, 
+                    Terraform, Azure, GitHub Actions, Databricks, KeyCloak, Celery, Temporal
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Senior DevOps / Data Platform Engineer</div>
+                        <div class="company">Allianz Technology</div>
+                    </div>
+                    <div class="date">Feb 2023 - Aug 2024 · 1 yr 7 mo</div>
+                </div>
+                <div class="exp-desc">Building Big Data platform for internal teams.</div>
+                
+                <div class="exp-section">
+                    <div class="exp-section-title">Main Tasks:</div>
+                    <ul>
+                        <li>Building an internal Big Data platform based on Azure Kubernetes (Kafka, JupyterHub, MLFlow, Luigi, Spark, Tibco etc.)</li>
+                        <li>Providing an Azure Data Factory-based solution for Data teams</li>
+                        <li>Implementing monitoring with Dynatrace</li>
+                        <li>Data Governance implementation with Informatica</li>
+                        <li>Implementing CI/CD processes for Data Engineers</li>
+                        <li>Providing general DevOps support for multiple teams</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <strong>Main Technologies:</strong> Linux, Python, Shell, Docker, Kubernetes, Helm, ArgoCD, 
+                    Terraform, Azure, Jenkins, GitHub Actions, Git, Dynatrace, Informatica, Databricks, Azure Synapse
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Senior DevOps Engineer</div>
+                        <div class="company">Tata Consultancy Services</div>
+                    </div>
+                    <div class="date">Jun 2021 - Jan 2023 · 1 yr 7 mo</div>
+                </div>
+                <div class="exp-desc">Classic DevOps Role on GE Healthcare's project.</div>
+                
+                <div class="exp-section">
+                    <div class="exp-section-title">Main Tasks:</div>
+                    <ul>
+                        <li>Updating an outdated codebase to modern standards</li>
+                        <li>Dockerization and making the application ready for the cloud</li>
+                        <li>Write the complete AWS infrastructure in Terraform</li>
+                        <li>Write CI/CD pipelines in GitHub Actions and Jenkins</li>
+                        <li>Deployment automatization with Ansible</li>
+                        <li>Monitoring/alerting and logging implementation</li>
+                        <li>Migration from on-prem to EC2, then Kubernetes</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <strong>Main Technologies:</strong> Linux, Bash, Docker, Docker Swarm, ECS, Kubernetes, Terraform, 
+                    Ansible, AWS, Jenkins, GitHub Actions, Git, Prometheus, Grafana, Elastic Stack, Loki, Oracle Cloud, 
+                    Lumen, VMware, Windows Servers
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">DevOps Engineer</div>
+                        <div class="company">EPAM Systems</div>
+                    </div>
+                    <div class="date">Jan 2020 - Jun 2021 · 1 yr 6 mo</div>
+                </div>
+                <div class="exp-desc">Classic DevOps Role on Verizon's smart city project.</div>
+                
+                <div class="exp-section">
+                    <div class="exp-section-title">Main Tasks:</div>
+                    <ul>
+                        <li>Write IaC in Cloudformation</li>
+                        <li>Write CI/CD Pipelines in Jenkins (DSL)</li>
+                        <li>Monitoring and logging implementation</li>
+                        <li>Migration from EC2 with custom AMIs to ECS, then EKS</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <strong>Main Technologies:</strong> Linux, Python, Bash, Docker, Kubernetes, Helm, Terraform, 
+                    Ansible, AWS, Jenkins, Git, Prometheus, Grafana, Elastic Stack, Oracle Cloud, WordPress, Nginx, 
+                    Traefik, Redis, Pandas, Numpy
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">SRE Engineer</div>
+                        <div class="company">Oracle</div>
+                    </div>
+                    <div class="date">Jan 2019 - Jan 2020 · 1 yr 1 mo</div>
+                </div>
+                <div class="exp-desc">Part of a newly formed SRE team to provide uniformized tools for business units.</div>
+                
+                <div class="exp-section">
+                    <div class="exp-section-title">Main Tasks:</div>
+                    <ul>
+                        <li>Developer/PO of database monitoring tool project</li>
+                        <li>Developer/DevOps Engineer on Oracle Cloud's Status Page</li>
+                        <li>SRE/Tiger Team member for different Products</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <strong>Main Technologies:</strong> Linux, Python, Shell, Docker, Kubernetes, Terraform, Ansible
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>TECHNICAL SKILLS</h2>
+            <div class="skills-compact">
+                <p><strong>Container & Orchestration:</strong> Kubernetes, Docker, Helm, ArgoCD, EKS, AKS</p>
+                <p><strong>Infrastructure as Code:</strong> Terraform, Ansible, CloudFormation, Pulumi</p>
+                <p><strong>CI/CD:</strong> GitHub Actions, Jenkins, GitLab CI, ArgoCD</p>
+                <p><strong>Cloud Platforms:</strong> AWS, Azure, Oracle Cloud, GCP</p>
+                <p><strong>Data & Big Data:</strong> Databricks, Kafka, Spark, Azure Synapse, MLFlow, JupyterHub</p>
+                <p><strong>Monitoring:</strong> Prometheus, Grafana, Dynatrace, ELK Stack, Loki</p>
+                <p><strong>Programming:</strong> Python, Bash/Shell, YAML, JSON, Git</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>EDUCATION</h2>
+            <div class="edu-item">
+                <div class="edu-title">EPAM Systems</div>
+                <div class="edu-desc"><strong>DevOps Academy</strong> - 2020</div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-title">Budapest Business School</div>
+                <div class="edu-desc"><strong>Business Administration and Management</strong> - 2015 -</div>
+            </div>
+        </section>
+
+
+
+    </div>
+
+    <!-- ATS Keywords - visible to bots parsing HTML, hidden in PDF -->
+    <div class="ats-keywords" aria-hidden="true">
+        DevOps Engineer, Senior DevOps Engineer, Lead DevOps Engineer, Site Reliability Engineer, SRE,
+        Platform Engineer, Infrastructure Engineer, Cloud Engineer, Data Platform Engineer, Big Data Engineer,
+        Kubernetes, K8s, Docker, Terraform, Ansible, AWS, Azure, GCP, Oracle Cloud,
+        CI/CD, GitOps, Infrastructure as Code, Helm, ArgoCD, Jenkins, GitHub Actions,
+        Prometheus, Grafana, Dynatrace, Datadog, ELK Stack, Databricks, Spark, Kafka,
+        Azure Synapse, MLFlow, Python, Bash, HIPAA, SOC 2, Agile, Scrum, Microservices
+    </div>
+
+</body>
+</html>

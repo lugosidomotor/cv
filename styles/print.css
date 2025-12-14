@@ -1,0 +1,103 @@
+/* Print Styles - Optimized for PDF Export */
+
+@media print {
+    /* Page Setup */
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    /* Reset body for print */
+    body {
+        padding: 0;
+        background-color: white;
+        font-size: 11pt;
+    }
+
+    /* CV Container */
+    .cv-container {
+        padding: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Hide web-only elements */
+    .print-instructions,
+    .navbar,
+    .nav-toggle,
+    .hero-cta,
+    .btn,
+    button {
+        display: none !important;
+    }
+
+    /* Page breaks */
+    .cv-section,
+    .experience-item,
+    .project-item,
+    .education-item,
+    .skill-category {
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    /* Ensure links are readable */
+    a {
+        color: var(--cv-text-color, #1e293b);
+        text-decoration: none;
+    }
+
+    .cv-contact a {
+        color: var(--cv-text-light, #64748b);
+    }
+
+    /* Show URLs for important links in print */
+    a[href^="http"]::after {
+        content: ' (' attr(href) ')';
+        font-size: 8pt;
+        color: #64748b;
+    }
+
+    /* Don't show URLs for email and phone links */
+    a[href^="mailto:"]::after,
+    a[href^="tel:"]::after,
+    a[href^="#"]::after {
+        content: '';
+    }
+
+    /* Ensure colors print correctly */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Optimize typography for print */
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+    }
+
+    /* Ensure proper spacing */
+    .cv-section {
+        margin-bottom: 20px;
+    }
+
+    .experience-item {
+        margin-bottom: 15px;
+    }
+
+    /* Optimize header for print */
+    .cv-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    /* Ensure borders print */
+    .cv-header,
+    .section-title {
+        border-color: #2563eb;
+    }
+}

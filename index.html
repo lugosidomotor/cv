@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elite DevOps & Data Platform Engineer specializing in Kubernetes, Terraform, CI/CD, and Big Data solutions for Fortune 500 companies. 6+ years experience, zero failed migrations.">
+    <meta name="keywords" content="DevOps Engineer, SRE, Data Platform, Kubernetes, Terraform, CI/CD, AWS, Azure, GCP, Docker, Infrastructure as Code, Big Data, Databricks">
+    <meta name="author" content="Dömötör Lugosi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lugosidomotor.hu/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lugosidomotor.hu/">
+    <meta property="og:title" content="Dömötör Lugosi | DevOps & Data Platform Engineer">
+    <meta property="og:description" content="Ship Faster. Scale Bigger. Elite DevOps engineer helping startups and enterprises build bulletproof infrastructure.">
+    <meta property="og:image" content="https://lugosidomotor.hu/images/profile.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://lugosidomotor.hu/">
+    <meta name="twitter:title" content="Dömötör Lugosi | DevOps & Data Platform Engineer">
+    <meta name="twitter:description" content="Ship Faster. Scale Bigger. Elite DevOps engineer helping startups and enterprises build bulletproof infrastructure.">
+    <meta name="twitter:image" content="https://lugosidomotor.hu/images/profile.jpg">
+    
+    <title>Dömötör Lugosi | DevOps & Data Platform Engineer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dömötör Lugosi",
+        "jobTitle": "DevOps & Data Platform Engineer",
+        "url": "https://lugosidomotor.hu",
+        "image": "https://lugosidomotor.hu/images/profile.jpg",
+        "email": "lugosi.domotor@gmail.com",
+        "telephone": "+36702433530",
+        "sameAs": [
+            "https://linkedin.com/in/domotorlugosi",
+            "https://medium.com/@domotorlugosi"
+        ],
+        "knowsAbout": ["DevOps", "Kubernetes", "Terraform", "AWS", "Azure", "CI/CD", "Data Platform", "Big Data"]
+    }
+    </script>
+    <style>
+        :root {
+            --cyan: #00fff5;
+            --pink: #ff006e;
+            --purple: #8338ec;
+            --dark: #0a0e27;
+            --card: #151932;
+            --text: #fff;
+            --muted: #94a3b8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10,14,39,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,255,245,0.1);
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        .logo { font-size: 1.5rem; font-weight: 900; color: var(--cyan); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--cyan); }
+        
+        /* Mobile menu */
+        .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .menu-toggle span { display: block; width: 25px; height: 3px; background: var(--cyan); margin: 5px 0; transition: all 0.3s; }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links { 
+                display: none; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                right: 0; 
+                background: rgba(10,14,39,0.98); 
+                flex-direction: column; 
+                padding: 1rem 2rem; 
+                gap: 1rem;
+                border-bottom: 1px solid rgba(0,255,245,0.1);
+            }
+            .nav-links.active { display: flex; }
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 80px;
+            padding: 8rem 0 6rem;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: -200px;
+            width: 500px;
+            height: 500px;
+            background: var(--cyan);
+            filter: blur(150px);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: var(--pink);
+            filter: blur(150px);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 900px; }
+        
+        /* Floating Code Snippets */
+        .floating-code {
+            position: absolute;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.75rem;
+            padding: 2.5rem 1.5rem 1rem 1.5rem;
+            background: rgba(21, 25, 50, 0.9);
+            border: 1px solid rgba(0, 255, 245, 0.3);
+            border-radius: 12px;
+            color: var(--cyan);
+            backdrop-filter: blur(10px);
+            z-index: 2;
+            white-space: pre;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        .floating-code::before {
+            content: '';
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            width: 10px;
+            height: 10px;
+            background: #ff5f56;
+            border-radius: 50%;
+            box-shadow: 16px 0 0 #ffbd2e, 32px 0 0 #27ca40;
+        }
+        .floating-code code { display: block; }
+        .code-1 { top: 10%; right: 5%; animation: float1 6s ease-in-out infinite; }
+        .code-2 { bottom: 20%; right: 10%; animation: float2 8s ease-in-out infinite; border-color: rgba(255, 0, 110, 0.3); color: var(--pink); }
+        .code-3 { top: 40%; right: 2%; animation: float3 7s ease-in-out infinite; border-color: rgba(131, 56, 236, 0.3); color: var(--purple); }
+        @keyframes float1 { 0%, 100% { transform: translateY(0) rotate(2deg); } 50% { transform: translateY(-20px) rotate(-1deg); } }
+        @keyframes float2 { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-15px) rotate(2deg); } }
+        @keyframes float3 { 0%, 100% { transform: translateY(0) rotate(1deg); } 50% { transform: translateY(-25px) rotate(-2deg); } }
+        @media (max-width: 1024px) { .floating-code { display: none; } }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(16,185,129,0.1);
+            border: 1px solid #10b981;
+            border-radius: 50px;
+            color: #10b981;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        .badge-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+        .tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(0,255,245,0.1);
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            margin-bottom: 0.8rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p { font-size: 1.25rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.7; max-width: 700px; }
+        .cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s; }
+        .btn-primary { background: var(--cyan); color: var(--dark); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,255,245,0.3); }
+        .btn-secondary { background: transparent; color: var(--pink); border: 2px solid var(--pink); }
+        .btn-secondary:hover { background: var(--pink); color: #fff; }
+        .btn-outline { background: transparent; color: var(--purple); border: 2px solid var(--purple); }
+        .btn-outline:hover { background: var(--purple); color: #fff; }
+
+        /* Stats - Bento Style */
+        .stats { padding: 4rem 0; background: rgba(30,36,66,0.5); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .stats-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 1.5rem; 
+        }
+        .stat {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .stat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cyan), var(--purple));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+        .stat:hover::before { transform: scaleX(1); }
+        .stat:hover { 
+            transform: translateY(-8px) scale(1.02); 
+            border-color: rgba(0,255,245,0.3);
+            box-shadow: 0 20px 40px rgba(0,255,245,0.1);
+        }
+        .stat:nth-child(1) { background: linear-gradient(135deg, rgba(0,255,245,0.1), transparent); }
+        .stat:nth-child(2) { background: linear-gradient(135deg, rgba(131,56,236,0.1), transparent); }
+        .stat:nth-child(3) { background: linear-gradient(135deg, rgba(255,0,110,0.1), transparent); }
+        .stat:nth-child(4) { background: linear-gradient(135deg, rgba(16,185,129,0.1), transparent); }
+        .stat h3 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        .stat:nth-child(2) h3 { background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; background-clip: text; }
+        .stat:nth-child(3) h3 { background: linear-gradient(135deg, var(--pink), var(--cyan)); -webkit-background-clip: text; background-clip: text; }
+        .stat:nth-child(4) h3 { color: #10b981; -webkit-text-fill-color: #10b981; }
+        .stat p { color: var(--muted); margin-top: 0.75rem; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .stat-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+
+        /* Section common */
+        section { padding: 6rem 0; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,0,110,0.1);
+            border: 1px solid var(--pink);
+            color: var(--pink);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .section-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 1rem; }
+        .section-subtitle { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Cards - Problem/Solution Style */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
+        .card {
+            background: var(--card);
+            padding: 0;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s;
+        }
+        .card:hover::before { transform: scaleX(1); }
+        .card:hover { 
+            transform: translateY(-12px) rotateX(2deg); 
+            border-color: rgba(0,255,245,0.3);
+            box-shadow: 0 30px 60px rgba(0,255,245,0.15);
+        }
+        .card-header {
+            padding: 2rem 2rem 1rem;
+            background: linear-gradient(135deg, rgba(0,255,245,0.05), transparent);
+        }
+        .card:nth-child(2) .card-header { background: linear-gradient(135deg, rgba(131,56,236,0.08), transparent); }
+        .card:nth-child(3) .card-header { background: linear-gradient(135deg, rgba(255,0,110,0.05), transparent); }
+        .card-icon { 
+            font-size: 3.5rem; 
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        .card:hover .card-icon { animation: none; transform: scale(1.2); transition: transform 0.3s; }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 0;
+            color: var(--text);
+        }
+        .card:nth-child(1) h3 { color: var(--cyan); }
+        .card:nth-child(2) h3 { color: var(--purple); }
+        .card:nth-child(3) h3 { color: var(--pink); }
+        .card-body { padding: 1.5rem 2rem 2rem; }
+        .card p { color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .card ul { list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .card li { 
+            padding: 0.5rem 1rem; 
+            color: var(--text); 
+            position: relative;
+            background: rgba(0,255,245,0.1);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(0,255,245,0.2);
+            transition: all 0.3s;
+        }
+        .card:nth-child(2) li { background: rgba(131,56,236,0.1); border-color: rgba(131,56,236,0.2); }
+        .card:nth-child(3) li { background: rgba(255,0,110,0.1); border-color: rgba(255,0,110,0.2); }
+        .card li:hover { transform: translateY(-2px) scale(1.05); }
+
+        /* Tech - Bento Grid */
+        .tech-section { background: rgba(30,36,66,0.5); }
+        .tech-grid { 
+            display: grid; 
+            grid-template-columns: repeat(6, 1fr); 
+            grid-template-rows: auto auto;
+            gap: 1.5rem; 
+        }
+        .tech-card:nth-child(1) { grid-column: span 2; } /* Cloud - wider */
+        .tech-card:nth-child(2) { grid-column: span 2; } /* Containers - wider */
+        .tech-card:nth-child(3) { grid-column: span 2; } /* IaC */
+        .tech-card:nth-child(4) { grid-column: span 3; } /* Data Platform - big */
+        .tech-card:nth-child(5) { grid-column: span 3; } /* Monitoring - big */
+        @media (max-width: 1200px) { 
+            .tech-grid { grid-template-columns: repeat(2, 1fr); }
+            .tech-card:nth-child(1),
+            .tech-card:nth-child(2),
+            .tech-card:nth-child(3),
+            .tech-card:nth-child(4),
+            .tech-card:nth-child(5) { grid-column: span 1; }
+        }
+        @media (max-width: 600px) { 
+            .tech-grid { grid-template-columns: 1fr; }
+        }
+        .tech-card { 
+            background: var(--card); 
+            padding: 2rem; 
+            border-radius: 20px; 
+            border: 1px solid rgba(131,56,236,0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(131,56,236,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .tech-card:hover::before { opacity: 1; }
+        .tech-card:hover { 
+            border-color: var(--purple); 
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(131,56,236,0.2);
+        }
+        .tech-card h3 { 
+            color: var(--purple); 
+            font-size: 1.1rem; 
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .tech-card ul { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tech-card li { 
+            padding: 0.4rem 0.8rem; 
+            color: var(--muted); 
+            list-style: none; 
+            background: rgba(131,56,236,0.1);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(131,56,236,0.2);
+            transition: all 0.3s;
+        }
+        .tech-card li:hover {
+            background: rgba(131,56,236,0.2);
+            color: var(--text);
+            transform: scale(1.05);
+        }
+
+        /* Contact - Modern Card */
+        .contact { background: rgba(30,36,66,0.5); }
+        .contact-wrapper {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            justify-content: center;
+            background: var(--card);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .contact-profile { text-align: center; }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: linear-gradient(var(--card), var(--card)) padding-box,
+                        linear-gradient(135deg, var(--cyan), var(--purple), var(--pink)) border-box;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s;
+            box-shadow: 0 10px 40px rgba(0,255,245,0.2);
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(0,255,245,0.3);
+        }
+        .contact-profile h3 { 
+            font-size: 1.8rem; 
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .contact-profile p { color: var(--muted); font-size: 1rem; }
+        .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.75rem;
+            background: rgba(0,255,245,0.03);
+            border: 1px solid rgba(0,255,245,0.1);
+            border-radius: 16px;
+            color: var(--muted);
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(180deg, var(--cyan), var(--purple));
+            transform: scaleY(0);
+            transition: transform 0.3s;
+        }
+        .contact-item:hover::before { transform: scaleY(1); }
+        .contact-item:hover { 
+            border-color: var(--cyan); 
+            color: var(--cyan); 
+            transform: translateX(10px);
+            background: rgba(0,255,245,0.08);
+            box-shadow: 0 10px 30px rgba(0,255,245,0.1);
+        }
+        .contact-item:nth-child(2):hover { border-color: var(--purple); color: var(--purple); }
+        .contact-item:nth-child(2)::before { background: linear-gradient(180deg, var(--purple), var(--pink)); }
+        .contact-item:nth-child(3):hover { border-color: var(--pink); color: var(--pink); }
+        .contact-item:nth-child(3)::before { background: linear-gradient(180deg, var(--pink), var(--cyan)); }
+        .contact-icon { font-size: 1.75rem; }
+        @media (max-width: 768px) {
+            .contact-wrapper { flex-direction: column; gap: 2rem; padding: 2rem; }
+            .profile-img { width: 150px; height: 150px; }
+        }
+
+        /* CTA */
+        .cta-section { text-align: center; padding: 8rem 0; }
+        .cta-section h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--cyan), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cta-section p { color: var(--muted); font-size: 1.25rem; margin-bottom: 2rem; }
+
+        /* Footer */
+        footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.05); color: var(--muted); }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+            .cta { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+        }
+        @media (max-width: 480px) { .stats-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">&lt;/DevOps&gt;</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tech">Stack</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="floating-code code-1"><code>$ kubectl get pods -A
+NAMESPACE     STATUS    
+production    Running ✓
+staging       Running ✓</code></div>
+            <div class="floating-code code-2"><code>$ terraform apply
+aws_eks_cluster: Creating...
+aws_eks_cluster: Created! ✓</code></div>
+            <div class="floating-code code-3"><code>pipeline:
+  stage: deploy
+  script: helm upgrade
+  status: success ✓</code></div>
+            
+            <div class="hero-content">
+                <div class="badge"><span class="badge-dot"></span>Available for projects</div>
+                <div class="tag">// DEVOPS & DATA PLATFORM ENGINEERING</div>
+                <h1>Ship Faster.<br>Scale Bigger.</h1>
+                <p>I help startups and enterprises build bulletproof infrastructure. From zero to production in weeks. Kubernetes, CI/CD, Big Data—done right.</p>
+                <div class="cta">
+                    <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                    <a href="https://medium.com/@domotorlugosi" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Read blog on Medium">Blog</a>
+                    <a href="cv.html" class="btn btn-outline" target="_blank" aria-label="View CV">CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-icon">⚡</div>
+                    <h3>6+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">🏢</div>
+                    <h3>5</h3>
+                    <p>Fortune 500 Clients</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">🚀</div>
+                    <h3>50+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">✅</div>
+                    <h3>0</h3>
+                    <p>Failed Migrations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Services</span>
+                <h2 class="section-title">Problems I Solve</h2>
+                <p class="section-subtitle">Sound familiar? I've fixed these exact issues for Fortune 500 companies.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🐌</div>
+                        <h3>"Deployments Take Forever"</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Manual deployments, broken pipelines, "it works on my machine" syndrome. I build CI/CD that ships code in minutes, not days.</p>
+                        <ul>
+                            <li>GitHub Actions</li>
+                            <li>Jenkins</li>
+                            <li>ArgoCD</li>
+                            <li>GitOps</li>
+                            <li>Auto rollbacks</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h3>"Our Data is a Mess"</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Data silos, no governance, analysts waiting weeks for access. I build platforms that make data accessible and secure.</p>
+                        <ul>
+                            <li>Databricks</li>
+                            <li>Spark</li>
+                            <li>Kafka</li>
+                            <li>Informatica</li>
+                            <li>SOC2/HIPAA</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🏚️</div>
+                        <h3>"We're Stuck on Legacy"</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>On-prem servers, outdated stacks, fear of migration. I've moved entire platforms to cloud with zero downtime.</p>
+                        <ul>
+                            <li>AWS</li>
+                            <li>Azure</li>
+                            <li>GCP</li>
+                            <li>Kubernetes</li>
+                            <li>Terraform</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="tech" class="tech-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Tech Stack</span>
+                <h2 class="section-title">Tools of the Trade</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>☁️ Cloud</h3>
+                    <ul>
+                        <li>AWS</li>
+                        <li>Azure</li>
+                        <li>GCP</li>
+                        <li>Oracle Cloud</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>🐳 Containers</h3>
+                    <ul>
+                        <li>Docker / Kubernetes / Helm</li>
+                        <li>ArgoCD / GitOps</li>
+                        <li>ECS / EKS / AKS</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>🔧 IaC & CI/CD</h3>
+                    <ul>
+                        <li>Terraform / Ansible</li>
+                        <li>GitHub Actions / Jenkins</li>
+                        <li>CloudFormation</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>📊 Data Platform</h3>
+                    <ul>
+                        <li>Databricks / Spark / Kafka</li>
+                        <li>Azure Synapse</li>
+                        <li>Azure Data Factory</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>📈 Monitoring</h3>
+                    <ul>
+                        <li>Prometheus / Grafana / Loki</li>
+                        <li>ELK Stack</li>
+                        <li>Datadog / Dynatrace</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Ship Faster?</h2>
+            <p>Let's talk about your infrastructure challenges.</p>
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Let's Build Something</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-profile">
+                    <img src="images/profile.jpg" alt="Dömötör Lugosi" class="profile-img">
+                    <h3>Dömötör Lugosi</h3>
+                    <p>DevOps & Data Platform Engineer</p>
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:lugosi.domotor@gmail.com" class="contact-item" aria-label="Send email">
+                        <span class="contact-icon">📧</span>
+                        <span>lugosi.domotor@gmail.com</span>
+                    </a>
+                    <a href="tel:+36702433530" class="contact-item" aria-label="Call phone">
+                        <span class="contact-icon">📱</span>
+                        <span>+36 70 243 3530</span>
+                    </a>
+                    <a href="https://linkedin.com/in/domotorlugosi" target="_blank" rel="noopener noreferrer" class="contact-item" aria-label="LinkedIn profile">
+                        <span class="contact-icon">💼</span>
+                        <span>linkedin.com/in/domotorlugosi</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Dömötör Lugosi. Built with ☕ & 💻</p>
+        </div>
+    </footer>
+</body>
+</html>
