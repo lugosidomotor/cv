@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DevOps Portfolio: Cloud migrations, Kubernetes deployments, CI/CD pipelines, and Big Data platforms for Oracle, Verizon, GE Healthcare, Allianz. 6+ years, 50+ projects, zero failed migrations.">
+    <meta name="description" content="DevOps Portfolio: Cloud migrations, Kubernetes deployments, CI/CD pipelines, and Big Data platforms for Oracle, Verizon, GE Healthcare, Allianz. 6+ years, 50+ projects, zero failed migrations. Available for Remote / Worldwide projects.">
     <meta name="keywords" content="DevOps Portfolio, Kubernetes Projects, Cloud Migration Case Studies, Data Platform Implementation, CI/CD Pipeline Examples, AWS Migration, Azure Kubernetes, Fortune 500 DevOps, Enterprise Infrastructure">
     <meta name="author" content="Dömötör Lugosi">
     <meta name="robots" content="index, follow">
@@ -20,92 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --cyan: #00fff5;
-            --pink: #ff006e;
-            --purple: #8338ec;
-            --dark: #0a0e27;
-            --card: #151932;
-            --text: #fff;
-            --muted: #94a3b8;
-            --font-display: 'Space Grotesk', sans-serif;
-            --font-body: 'Inter', sans-serif;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; overflow-x: hidden; }
-        body { font-family: var(--font-body); background: var(--dark); color: var(--text); overflow-x: hidden; line-height: 1.6; }
-        html, body { max-width: 100vw; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-
-        /* Nav */
-        nav { position: fixed; top: 0; width: 100%; background: rgba(10,14,39,0.9); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(0,255,245,0.1); }
-        nav .container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.5rem; font-weight: 900; color: var(--cyan); text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; transition: color 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
-        .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-        .menu-toggle span { display: block; width: 25px; height: 3px; background: var(--cyan); margin: 5px 0; }
-        @media (max-width: 768px) {
-            .menu-toggle { display: block; }
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,14,39,0.98); flex-direction: column; padding: 1rem 2rem; gap: 1rem; }
-            .nav-links.active { display: flex; }
-        }
-
-        /* Page Header */
-        .page-header { margin-top: 80px; padding: 4rem 0 2rem; text-align: center; }
-        @media (max-width: 768px) { .page-header { padding: 3rem 0 1.5rem; } }
-        .page-header h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -1px;
-        }
-        .page-header p { color: var(--muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
-
-        /* Projects Grid */
-        .projects { padding: 2rem 0 4rem; }
-        @media (max-width: 768px) { .projects { padding: 1.5rem 0 3rem; } }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .project-card {
-            background: var(--card);
-            border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.05);
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .project-card:hover { transform: translateY(-10px); border-color: rgba(0,255,245,0.3); box-shadow: 0 30px 60px rgba(0,255,245,0.1); }
-        .project-header { padding: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .project-company { color: var(--cyan); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
-        .project-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
-        .project-role { color: var(--muted); font-size: 0.9rem; }
-        .project-body { padding: 2rem; }
-        .project-desc { color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
-        .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .project-tech span {
-            padding: 0.4rem 0.8rem;
-            background: rgba(131,56,236,0.1);
-            border: 1px solid rgba(131,56,236,0.2);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: var(--purple);
-        }
-        .project-results { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); }
-        .project-results h4 { color: var(--pink); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem; }
-        .project-results ul { list-style: none; }
-        .project-results li { color: var(--muted); padding: 0.3rem 0; padding-left: 1.2rem; position: relative; font-size: 0.9rem; }
-        .project-results li::before { content: '✓'; position: absolute; left: 0; color: #10b981; }
-
-        /* Footer */
-        footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.05); color: var(--muted); }
-        footer a { color: var(--cyan); text-decoration: none; }
-    </style>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <nav>
@@ -155,7 +70,7 @@
                             <ul>
                                 <li>End-to-end HIPAA & SOC 2 compliance</li>
                                 <li>Zero-downtime deployments via GitOps</li>
-                                <li>Reduced deployment time from days to minutes</li>
+                                <li>Reduced deployment time by 95% (from 2 days to 15 mins)</li>
                             </ul>
                         </div>
                     </div>
@@ -286,7 +201,7 @@
                         <div class="project-results">
                             <h4>Key Results</h4>
                             <ul>
-                                <li>300M+ HUF annual revenue platform</li>
+                                <li>~$1M USD annual revenue platform</li>
                                 <li>99.9% uptime during peak seasons</li>
                                 <li>Full-stack infrastructure ownership</li>
                             </ul>
@@ -326,7 +241,10 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Dömötör Lugosi. <a href="index.html">← Back to Home</a></p>
+            <div class="footer-content">
+                <div class="footer-tagline">Cloud Native Engineering <span style="color:var(--cyan)">//</span> Data Platform Architecture</div>
+                <div class="footer-copyright">© 2025 Dömötör Lugosi</div>
+            </div>
         </div>
     </footer>
 </body>
