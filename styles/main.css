@@ -150,7 +150,7 @@ nav .container {
 .floating-code {
     position: absolute;
     font-family: 'Fira Code', 'Courier New', monospace;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     padding: 2rem 1.25rem 0.75rem 1.25rem;
     background: rgba(21, 25, 50, 0.9);
     border: 1px solid rgba(0, 255, 245, 0.3);
@@ -161,11 +161,10 @@ nav .container {
     white-space: pre-wrap;
     word-break: break-word;
     overflow-wrap: break-word;
-    max-width: 220px;
+    max-width: 260px;
     line-height: 1.4;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     pointer-events: none;
-    overflow: hidden;
 }
 .floating-code::before {
     content: '';
