@@ -158,12 +158,15 @@ nav .container {
     color: var(--cyan);
     backdrop-filter: blur(10px);
     z-index: 3;
-    white-space: pre-wrap;
+    /* Preserve terminal formatting: don't reflow lines, allow horizontal scroll */
+    white-space: pre;
     word-break: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
     /* never exceed container / viewport — keep some breathing room */
-    max-width: min(320px, calc(100% - 4rem));
+    max-width: min(420px, calc(100% - 4rem));
     line-height: 1.6;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     pointer-events: none;
 }
@@ -178,7 +181,7 @@ nav .container {
     border-radius: 50%;
     box-shadow: 12px 0 0 #ffbd2e, 24px 0 0 #27ca40;
 }
-.floating-code code { display: block; white-space: pre-wrap; }
+.floating-code code { display: block; white-space: pre; overflow-x: auto; }
 .code-1 { top: clamp(24px, 12%, 140px); right: clamp(16px, 6vw, 120px); animation: float1 6s ease-in-out infinite; }
 .code-2 { bottom: clamp(24px, 12%, 140px); right: clamp(16px, 6vw, 120px); animation: float2 8s ease-in-out infinite; border-color: rgba(255, 0, 110, 0.3); color: var(--pink); }
 .code-3 { top: clamp(80px, 28%, 220px); right: clamp(24px, 8vw, 160px); animation: float3 7s ease-in-out infinite; border-color: rgba(131, 56, 236, 0.3); color: var(--purple); }
@@ -218,7 +221,10 @@ nav .container {
         border: 1px solid rgba(0, 255, 245, 0.4);
         border-radius: 8px;
         color: var(--cyan);
-        white-space: nowrap;
+        /* keep terminal lines intact on mobile, allow horizontal scroll */
+        white-space: pre;
+        max-width: min(260px, calc(100% - 4rem));
+        overflow-x: auto;
         z-index: 3;
         box-shadow: 0 5px 20px rgba(0,0,0,0.4);
     }
