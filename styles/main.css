@@ -179,8 +179,8 @@ nav .container {
     box-shadow: 12px 0 0 #ffbd2e, 24px 0 0 #27ca40;
 }
 .floating-code code { display: block; }
-.code-1 { top: 15%; right: -5%; animation: float1 6s ease-in-out infinite; }
-.code-2 { bottom: 15%; right: -5%; animation: float2 8s ease-in-out infinite; border-color: rgba(255, 0, 110, 0.3); color: var(--pink); }
+.code-1 { top: 15%; right: -15%; animation: float1 6s ease-in-out infinite; }
+.code-2 { bottom: 15%; right: -15%; animation: float2 8s ease-in-out infinite; border-color: rgba(255, 0, 110, 0.3); color: var(--pink); }
 .code-3 { top: 40%; right: 15%; animation: float3 7s ease-in-out infinite; border-color: rgba(131, 56, 236, 0.3); color: var(--purple); }
 @keyframes float1 { 0%, 100% { transform: translateY(0) rotate(2deg); } 50% { transform: translateY(-20px) rotate(-1deg); } }
 @keyframes float2 { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-15px) rotate(2deg); } }
