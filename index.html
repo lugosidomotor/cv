@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0e27">
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
     <meta name="description" content="Freelance DevOps Consultant & Kubernetes Engineer. Specializing in cloud infrastructure, CI/CD automation, and Big Data platforms for startups and Fortune 500 companies. 6+ years experience, zero failed migrations. Available for Remote / Worldwide projects.">
     <meta name="keywords" content="DevOps Consultant, Kubernetes Engineer, Cloud Infrastructure Expert, SRE, Site Reliability Engineer, Data Platform Engineer, Terraform Specialist, CI/CD Automation, AWS Consultant, Azure Expert, GCP, Docker, Infrastructure as Code, Big Data, Databricks, DevOps Hungary, Freelance DevOps">
     <meta name="author" content="Dömötör Lugosi">
     <meta name="robots" content="index, follow">
 
     <link rel="canonical" href="https://lugosidomotor.hu/">
+    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
@@ -27,9 +33,21 @@
     <meta name="twitter:image" content="https://lugosidomotor.hu/images/profile.jpg">
     
     <title>Dömötör Lugosi | DevOps & Data Platform Engineer</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon/favicon-16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" sizes="180x180">
+
+    <link rel="preload" as="image" href="images/profile-260.jpg">
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+    </noscript>
+
     <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
     
     <!-- Structured Data - Person -->
     <script type="application/ld+json">
@@ -80,10 +98,11 @@
     </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <nav>
         <div class="container">
-            <a href="#" class="logo">&lt;/DevOps&gt;</a>
+            <a href="index.html" class="logo">&lt;/DevOps&gt;</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -91,12 +110,13 @@
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
+            <button class="menu-toggle" id="navToggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Open menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
+    <main id="main" tabindex="-1">
     <section class="hero">
         <div class="container">
             <div class="floating-code code-1"><code>$ kubectl get pods -A
@@ -121,7 +141,17 @@ aws_eks_cluster: Created! ✓</code></div>
                         <div class="mobile-floating-code mfc-1"><code>$ kubectl ✓</code></div>
                         <div class="mobile-floating-code mfc-2"><code>terraform ✓</code></div>
                         <div class="hero-image">
-                            <img src="images/profile.jpg" alt="Dömötör Lugosi - DevOps Engineer" loading="eager">
+                            <img
+                                src="images/profile-260.jpg"
+                                srcset="images/profile-160.jpg 160w, images/profile-260.jpg 260w, images/profile.jpg 500w"
+                                sizes="(max-width: 1024px) 160px, 260px"
+                                alt="Dömötör Lugosi - DevOps Engineer"
+                                loading="eager"
+                                decoding="async"
+                                fetchpriority="high"
+                                width="260"
+                                height="260"
+                            >
                         </div>
                         <div class="mobile-floating-code mfc-3"><code>deploy ✓</code></div>
                         <div class="mobile-floating-code mfc-4"><code>CI/CD ✓</code></div>
@@ -129,11 +159,21 @@ aws_eks_cluster: Created! ✓</code></div>
                     <div class="cta">
                         <a href="#contact" class="btn btn-primary">Book a Free Call →</a>
                         <a href="portfolio.html" class="btn btn-secondary">View Portfolio</a>
-                        <a href="cv.html" class="btn btn-outline" target="_blank" aria-label="Download CV">Download CV</a>
+                        <a href="cv.html" class="btn btn-outline" target="_blank" rel="noopener noreferrer" aria-label="Download CV">Download CV</a>
                     </div>
                 </div>
                 <div class="hero-image desktop-only">
-                    <img src="images/profile.jpg" alt="Dömötör Lugosi - DevOps Engineer" loading="eager">
+                    <img
+                        src="images/profile-260.jpg"
+                        srcset="images/profile-160.jpg 160w, images/profile-260.jpg 260w, images/profile.jpg 500w"
+                        sizes="(max-width: 1024px) 160px, 260px"
+                        alt="Dömötör Lugosi - DevOps Engineer"
+                        loading="eager"
+                        decoding="async"
+                        fetchpriority="high"
+                        width="260"
+                        height="260"
+                    >
                 </div>
             </div>
         </div>
@@ -142,25 +182,26 @@ aws_eks_cluster: Created! ✓</code></div>
     <!-- Stats -->
     <section class="stats">
         <div class="container">
+            <h2 class="sr-only">Key stats</h2>
             <div class="stats-grid">
-                <div class="stat">
+                <div class="stat animate-on-scroll">
                     <div class="stat-icon">⚡</div>
-                    <h3>6+</h3>
+                    <div class="stat-number">6+</div>
                     <p>Years Experience</p>
                 </div>
-                <div class="stat">
+                <div class="stat animate-on-scroll">
                     <div class="stat-icon">🏢</div>
-                    <h3>5</h3>
+                    <div class="stat-number">5</div>
                     <p>Fortune 500 Clients</p>
                 </div>
-                <div class="stat">
+                <div class="stat animate-on-scroll">
                     <div class="stat-icon">🚀</div>
-                    <h3>50+</h3>
+                    <div class="stat-number">50+</div>
                     <p>Projects Delivered</p>
                 </div>
-                <div class="stat">
+                <div class="stat animate-on-scroll">
                     <div class="stat-icon">✅</div>
-                    <h3>0</h3>
+                    <div class="stat-number">0</div>
                     <p>Failed Migrations</p>
                 </div>
             </div>
@@ -194,7 +235,7 @@ aws_eks_cluster: Created! ✓</code></div>
                 <p class="section-subtitle">Whether you're a startup scaling fast or an enterprise modernizing legacy systems—I've solved these problems before.</p>
             </div>
             <div class="grid-3">
-                <div class="card">
+                <div class="card animate-on-scroll aos-scale">
                     <div class="card-header">
                         <div class="card-icon">🐌</div>
                         <h3>"Deployments Take Forever"</h3>
@@ -210,7 +251,7 @@ aws_eks_cluster: Created! ✓</code></div>
                         </ul>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card animate-on-scroll aos-scale">
                     <div class="card-header">
                         <div class="card-icon">📊</div>
                         <h3>"Our Data is a Mess"</h3>
@@ -226,7 +267,7 @@ aws_eks_cluster: Created! ✓</code></div>
                         </ul>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card animate-on-scroll aos-scale">
                     <div class="card-header">
                         <div class="card-icon">☁️</div>
                         <h3>"Cloud Architecture & Evolution"</h3>
@@ -254,7 +295,7 @@ aws_eks_cluster: Created! ✓</code></div>
                 <h2 class="section-title">Tools of the Trade</h2>
             </div>
             <div class="tech-grid">
-                <div class="tech-card">
+                <div class="tech-card animate-on-scroll aos-left">
                     <h3>☁️ Cloud</h3>
                     <ul>
                         <li>AWS</li>
@@ -263,7 +304,7 @@ aws_eks_cluster: Created! ✓</code></div>
                         <li>Oracle Cloud</li>
                     </ul>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card animate-on-scroll aos-right">
                     <h3>🐳 Containers</h3>
                     <ul>
                         <li>Docker / Kubernetes / Helm</li>
@@ -271,7 +312,7 @@ aws_eks_cluster: Created! ✓</code></div>
                         <li>ECS / EKS / AKS</li>
                     </ul>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card animate-on-scroll aos-left">
                     <h3>🔧 IaC & CI/CD</h3>
                     <ul>
                         <li>Terraform / Ansible</li>
@@ -279,7 +320,7 @@ aws_eks_cluster: Created! ✓</code></div>
                         <li>CloudFormation</li>
                     </ul>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card animate-on-scroll aos-right">
                     <h3>📊 Data Platform</h3>
                     <ul>
                         <li>Databricks / Spark / Kafka</li>
@@ -287,7 +328,7 @@ aws_eks_cluster: Created! ✓</code></div>
                         <li>Azure Data Factory</li>
                     </ul>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card animate-on-scroll aos-left">
                     <h3>📈 Monitoring</h3>
                     <ul>
                         <li>Prometheus / Grafana / Loki</li>
@@ -312,7 +353,7 @@ aws_eks_cluster: Created! ✓</code></div>
     <section id="contact" class="contact-new">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-left">
+                <div class="contact-left animate-on-scroll aos-left">
                     <span class="section-tag">Contact</span>
                     <h2 class="contact-title">Let's make<br><span class="gradient-text">something awesome</span></h2>
                     <p class="contact-desc">Got a project in mind? Infrastructure on fire? Or just want to chat about Kubernetes over coffee? ☕</p>
@@ -321,7 +362,7 @@ aws_eks_cluster: Created! ✓</code></div>
                         <span>Available for new projects</span>
                     </div>
                 </div>
-                <div class="contact-right">
+                <div class="contact-right animate-on-scroll aos-right">
                     <div class="contact-card">
                         <div class="contact-card-header">
                             <span class="terminal-dots"></span>
@@ -332,10 +373,10 @@ aws_eks_cluster: Created! ✓</code></div>
                                 <span class="contact-label">$ email</span>
                                 <span class="contact-value">lugosi.domotor@gmail.com</span>
                             </a>
-                            <a href="#" class="contact-link" style="pointer-events: none;">
+                            <div class="contact-link contact-link-static" aria-label="Location: Remote / Worldwide">
                                 <span class="contact-label">$ location</span>
                                 <span class="contact-value">Remote / Worldwide</span>
-                            </a>
+                            </div>
                             <a href="https://linkedin.com/in/domotorlugosi" target="_blank" rel="noopener noreferrer" class="contact-link">
                                 <span class="contact-label">$ linkedin</span>
                                 <span class="contact-value">domotorlugosi</span>
@@ -353,6 +394,7 @@ aws_eks_cluster: Created! ✓</code></div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>

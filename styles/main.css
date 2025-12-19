@@ -98,8 +98,10 @@ nav .container {
     pointer-events: none;
 }
 .hero { overflow: hidden; }
+/* Anchor absolute hero decorations to the centered container (prevents ultrawide overlap) */
+.hero .container { position: relative; }
 .hero-content { position: relative; z-index: 1; flex: 1; max-width: 600px; }
-.hero-wrapper { display: flex; align-items: center; justify-content: space-between; }
+.hero-wrapper { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 2; }
 .hero-image {
     flex-shrink: 0;
     position: relative;
@@ -155,9 +157,10 @@ nav .container {
     border-radius: 12px;
     color: var(--cyan);
     backdrop-filter: blur(10px);
-    z-index: 2;
+    z-index: 3;
     white-space: pre;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
 }
 .floating-code::before {
     content: '';
@@ -304,7 +307,7 @@ nav .container {
 .stat:nth-child(2) { background: linear-gradient(135deg, rgba(131,56,236,0.1), transparent); }
 .stat:nth-child(3) { background: linear-gradient(135deg, rgba(255,0,110,0.1), transparent); }
 .stat:nth-child(4) { background: linear-gradient(135deg, rgba(16,185,129,0.1), transparent); }
-.stat h3 {
+.stat-number {
     font-family: var(--font-display);
     font-size: 3.5rem;
     font-weight: 700;
@@ -315,9 +318,9 @@ nav .container {
     line-height: 1;
     letter-spacing: -1px;
 }
-.stat:nth-child(2) h3 { background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; background-clip: text; }
-.stat:nth-child(3) h3 { background: linear-gradient(135deg, var(--pink), var(--cyan)); -webkit-background-clip: text; background-clip: text; }
-.stat:nth-child(4) h3 { color: #10b981; -webkit-text-fill-color: #10b981; }
+.stat:nth-child(2) .stat-number { background: linear-gradient(135deg, var(--purple), var(--pink)); -webkit-background-clip: text; background-clip: text; }
+.stat:nth-child(3) .stat-number { background: linear-gradient(135deg, var(--pink), var(--cyan)); -webkit-background-clip: text; background-clip: text; }
+.stat:nth-child(4) .stat-number { color: #10b981; -webkit-text-fill-color: #10b981; }
 .stat p { color: var(--muted); margin-top: 0.75rem; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 .stat-icon { font-size: 2rem; margin-bottom: 0.5rem; }
 
@@ -718,3 +721,111 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid rgba(255,255,2
 .project-results li::before { content: '✓'; position: absolute; left: 0; color: #10b981; }
 
 footer a { color: var(--cyan); text-decoration: none; }
+
+/* =========================
+   Accessibility helpers
+   ========================= */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 1rem;
+    z-index: 2000;
+    background: var(--cyan);
+    color: var(--dark);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-weight: 800;
+    text-decoration: none;
+}
+.skip-link:focus { left: 1rem; }
+
+:focus-visible {
+    outline: 3px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+/* Make content links distinguishable without underlining buttons/nav */
+.about-text a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+}
+
+/* Slight contrast boost for purple accents on dark backgrounds */
+:root {
+    --purple-contrast: #c4b5fd;
+}
+.tech-card h3 { color: var(--purple-contrast); }
+.project-tech span { color: var(--purple-contrast); }
+.contact-response { color: var(--purple-contrast); }
+.btn-outline { color: var(--purple-contrast); border-color: var(--purple-contrast); }
+
+.contact-link-static {
+    cursor: default;
+}
+.contact-link-static:hover {
+    background: rgba(0,255,245,0.03);
+    border-color: transparent;
+    transform: none;
+}
+
+/* =========================
+   Scroll animations
+   ========================= */
+.js .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 700ms ease, transform 700ms ease;
+    transition-delay: var(--delay, 0ms);
+    will-change: opacity, transform;
+}
+.js .animate-on-scroll.aos-left { transform: translateX(-32px); }
+.js .animate-on-scroll.aos-right { transform: translateX(32px); }
+.js .animate-on-scroll.aos-scale { transform: translateY(24px) scale(0.98); }
+
+.js .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Stagger delays */
+.stats-grid .stat:nth-child(1) { --delay: 0ms; }
+.stats-grid .stat:nth-child(2) { --delay: 80ms; }
+.stats-grid .stat:nth-child(3) { --delay: 160ms; }
+.stats-grid .stat:nth-child(4) { --delay: 240ms; }
+
+#services .grid-3 .card:nth-child(1) { --delay: 0ms; }
+#services .grid-3 .card:nth-child(2) { --delay: 100ms; }
+#services .grid-3 .card:nth-child(3) { --delay: 200ms; }
+
+#tech .tech-grid .tech-card:nth-child(1) { --delay: 0ms; }
+#tech .tech-grid .tech-card:nth-child(2) { --delay: 70ms; }
+#tech .tech-grid .tech-card:nth-child(3) { --delay: 140ms; }
+#tech .tech-grid .tech-card:nth-child(4) { --delay: 210ms; }
+#tech .tech-grid .tech-card:nth-child(5) { --delay: 280ms; }
+
+.projects-grid .project-card:nth-child(1) { --delay: 0ms; }
+.projects-grid .project-card:nth-child(2) { --delay: 80ms; }
+.projects-grid .project-card:nth-child(3) { --delay: 160ms; }
+.projects-grid .project-card:nth-child(4) { --delay: 240ms; }
+.projects-grid .project-card:nth-child(5) { --delay: 320ms; }
+.projects-grid .project-card:nth-child(6) { --delay: 400ms; }
+.projects-grid .project-card:nth-child(7) { --delay: 480ms; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .floating-code, .card-icon, .badge-dot, .blink { animation: none !important; }
+    .js .animate-on-scroll { opacity: 1 !important; transform: none !important; transition: none !important; }
+}

@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0e27">
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
     <meta name="description" content="Dömötör Lugosi - DevOps/SRE/Data Platform Engineer CV. 6+ years experience with Kubernetes, Docker, Terraform, AWS, Azure, Databricks, CI/CD. Available for Remote / Worldwide projects.">
     <meta name="keywords" content="DevOps, SRE, Data Platform Engineer, Kubernetes, Docker, Terraform, AWS, Azure, Python, CI/CD, Databricks, ArgoCD">
     <meta name="author" content="Dömötör Lugosi">
     <meta name="robots" content="index, follow">
     <title>Dömötör Lugosi - DevOps/SRE/Data Platform Engineer - CV</title>
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon/favicon-16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" sizes="180x180">
     
     <!-- Structured Data for ATS/Bots -->
     <script type="application/ld+json">
@@ -79,15 +90,23 @@
     <meta name="coverage" content="Remote, Hungary, Europe, Worldwide">
     <meta name="subject" content="DevOps, Kubernetes, AWS, Azure, Terraform, CI/CD, Big Data, Data Platform">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    </noscript>
     <link rel="stylesheet" href="styles/cv.css">
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="action-bar">
         <a href="index.html" class="action-btn back-btn">← Back to Website</a>
         <button class="action-btn print-btn" onclick="window.print()">📄 Export PDF</button>
     </div>
 
+    <main id="main" tabindex="-1">
     <div class="cv-container">
         <header>
             <h1>DÖMÖTÖR LUGOSI</h1>
@@ -95,9 +114,9 @@
             <div class="contact-info">
                 <span>🌍 Remote / Worldwide</span>
                 <span>✉️ <a href="mailto:lugosi.domotor@gmail.com">lugosi.domotor@gmail.com</a></span>
-                <span>💼 <a href="https://linkedin.com/in/domotorlugosi" target="_blank">linkedin.com/in/domotorlugosi</a></span>
-                <span>🌐 <a href="https://www.lugosidomotor.hu" target="_blank">lugosidomotor.hu</a></span>
-                <span>📝 <a href="https://medium.com/@domotorlugosi" target="_blank">medium.com/@domotorlugosi</a></span>
+                <span>💼 <a href="https://linkedin.com/in/domotorlugosi" target="_blank" rel="noopener noreferrer">linkedin.com/in/domotorlugosi</a></span>
+                <span>🌐 <a href="https://www.lugosidomotor.hu" target="_blank" rel="noopener noreferrer">lugosidomotor.hu</a></span>
+                <span>📝 <a href="https://medium.com/@domotorlugosi" target="_blank" rel="noopener noreferrer">medium.com/@domotorlugosi</a></span>
             </div>
         </header>
 
@@ -322,6 +341,7 @@
 
 
     </div>
+    </main>
 
     <!-- ATS Keywords - visible to bots parsing HTML, hidden in PDF -->
     <div class="ats-keywords" aria-hidden="true">

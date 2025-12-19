@@ -2,24 +2,24 @@
   "name": "Dömötör Lugosi | DevOps & Data Platform Engineer",
   "short_name": "Lugosi",
   "description": "Freelance DevOps Consultant & Kubernetes Engineer. Cloud infrastructure, CI/CD automation, and Data Platform engineering.",
-  "start_url": "/?source=pwa",
-  "scope": "/",
+  "start_url": "./?source=pwa",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#0a0e27",
   "theme_color": "#0a0e27",
   "icons": [
     {
-      "src": "/favicon/icon-192.png",
+      "src": "favicon/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/favicon/icon-512.png",
+      "src": "favicon/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/favicon/icon-512.png",
+      "src": "favicon/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

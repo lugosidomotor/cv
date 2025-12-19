@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0e27">
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
     <meta name="description" content="DevOps Portfolio: Cloud migrations, Kubernetes deployments, CI/CD pipelines, and Big Data platforms for Oracle, Verizon, GE Healthcare, Allianz. 6+ years, 50+ projects, zero failed migrations. Available for Remote / Worldwide projects.">
     <meta name="keywords" content="DevOps Portfolio, Kubernetes Projects, Cloud Migration Case Studies, Data Platform Implementation, CI/CD Pipeline Examples, AWS Migration, Azure Kubernetes, Fortune 500 DevOps, Enterprise Infrastructure">
     <meta name="author" content="Dömötör Lugosi">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://lugosidomotor.hu/portfolio.html">
+    <link rel="manifest" href="manifest.json">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lugosidomotor.hu/portfolio.html">
@@ -16,13 +22,23 @@
     <meta property="og:image" content="https://lugosidomotor.hu/images/profile.jpg">
     
     <title>Portfolio | Dömötör Lugosi - DevOps Engineer</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+    <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon/favicon-16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" sizes="180x180">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+    </noscript>
     <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <nav>
         <div class="container">
             <a href="index.html" class="logo">&lt;/DevOps&gt;</a>
@@ -33,12 +49,13 @@
                 <li><a href="portfolio.html" class="active">Portfolio</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">
+            <button class="menu-toggle" id="navToggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Open menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
+    <main id="main" tabindex="-1">
     <section class="page-header">
         <div class="container">
             <h1>Portfolio</h1>
@@ -48,8 +65,9 @@
 
     <section class="projects">
         <div class="container">
+            <h2 class="sr-only">Selected projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card animate-on-scroll">
                     <div class="project-header">
                         <div class="project-company">Undisclosed Client (NDA)</div>
                         <h3 class="project-title">Healthcare Data Platform</h3>
@@ -76,7 +94,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card animate-on-scroll">
                     <div class="project-header">
                         <div class="project-company">Allianz Technology</div>
                         <h3 class="project-title">Internal Big Data Platform</h3>
@@ -103,7 +121,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card animate-on-scroll">
                     <div class="project-header">
                         <div class="project-company">GE Healthcare (via TCS)</div>
                         <h3 class="project-title">Cloud Migration & Modernization</h3>
@@ -130,7 +148,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card animate-on-scroll">
                     <div class="project-header">
                         <div class="project-company">Verizon (via EPAM)</div>
                         <h3 class="project-title">Smart City IoT Platform</h3>
@@ -156,7 +174,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card animate-on-scroll">
                     <div class="project-header">
                         <div class="project-company">Oracle</div>
                         <h3 class="project-title">SRE Tooling & Status Page</h3>
@@ -182,7 +200,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card animate-on-scroll">
                     <div class="project-header">
                         <div class="project-company">E-commerce</div>
                         <h3 class="project-title">High-Traffic Webshop Platform</h3>
@@ -209,7 +227,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card animate-on-scroll">
                     <div class="project-header">
                         <div class="project-company">Freelance & Consulting</div>
                         <h3 class="project-title">DevOps Problem Solver</h3>
@@ -238,6 +256,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer>
         <div class="container">
